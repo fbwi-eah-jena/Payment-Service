@@ -1,0 +1,32 @@
+{
+	"mqttbroker": "mqtt:localhost",
+  "paymentdb" :
+    {
+      "host" : "localhost",
+      "user" : "root",
+      "password" : "",
+      "db" : "paymentdb"
+    },
+	"account" :
+	{
+		"email" :
+			{
+				"host" : "smtp.strato.de",
+				"port" : 465,
+				"secure" : true,
+				"auth" :
+				{
+					"user": "dev@michaelmaisel.de",
+					"pass": "devaccount12345"
+				}
+			},
+		"paypal" :
+		{
+			"user" : "kontakt-facilitator_api1.michaelmaisel.de",
+			"pass" : "9XWB5FS47MG839U8",
+			"signature" : "AFcWxV21C7fd0v3bYYYRCpSSRl31AZeTLEimHyYlgIgLS9.U0RL735Df",
+			"returnurl" : "http://localhost:3001/success",
+			"cancelurl" : "http://localhost:3001/fail"
+		}
+	}
+}

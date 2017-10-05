@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  div(class='header') 
+   h1 Zahlungsübersicht
+  div(class='infobox')
+    div(class='inforow')
+      p Hallo #{firstname}, 
+    div(class='inforow')
+      p deine OrderID ist #{id}, oder?
+    div(class='inforow')
+      p der Preis für deinen Drink beträgt #{price}€
+      div(class='paymentoptions')
+        div(class='paymentoption')
+          form(method='GET' action='/paymentstart')
+            input(type='image' src='https://www.braintreepayments.com/images/features/paypal/paypal-button@2x-69b78052.png' style='width: 153px;')
+            - var idtest = {id};
+            input(type='hidden' id='test' name='orderid' value=idtest)
+  
+  

@@ -1,0 +1,158 @@
+
+body {
+  padding: 1em;
+  font-family:'Verdana Bold Italic', sans-serif;;
+  font-size: 15px;
+  font-style: italic;
+  color: black;
+
+  background-image: url("/images/background.jpg");
+  /*background-color: #009790;*/
+  background-repeat: repeat;
+
+
+  @font-face {
+  	font-family: 'Verdana Bold Italic';
+  	src: url('fonts/verdanaz.ttf');
+  	src:
+  		local('Verdana Bold Italic'),
+  		url('/fonts/verdanaz.ttf')
+  		format('opentype');
+  }
+}
+
+h1 {
+  color: white;
+  text-shadow: 0 0 15px #000000;
+}
+
+h3{
+  color:white;
+}
+
+input:focus, select:focus {outline: none;}
+input:invalid {color: red;}
+input:valid {color: green;}
+select {color: gray; }
+
+.change::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: red;
+}
+.change:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: red;
+    opacity: 1;
+}
+.change::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: red;
+    opacity: 1;
+}
+.change:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: red;
+}
+
+input, select {
+  width: 100%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: white;  <!-- Farbe für Eingabefelder -->
+  border-style: solid;
+  border:none;
+  border-width:2px;
+  border-radius: 35px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover{
+  border: 4px solid #66b40a;
+}
+
+button {
+  width: 40%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: white;
+  border: 2px solid #e5e5e5;
+  border-radius: 15px;
+  box-sizing: border-box;
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input:focus + .input-icon i {
+  color: #66b40a;             <!-- Farbe für Icons bei Klick -->
+}
+
+.input-group {
+  margin-bottom: 1em;
+
+}
+<!---->
+
+.input-group-icon {
+  position: relative;
+}
+.input-group-icon input {
+  padding-left: 4.5em;
+}
+<!---->
+.input-group-icon .input-icon {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  width: 4em;
+  height: 4em;
+  line-height: 3.5em;
+  text-align: center;
+  pointer-events: none;
+
+}
+<!-- Icon Formatierung in Eigabefelder + Formatierung gesamt-->
+
+.form-control {
+  display: inline;
+  position: relative;
+}
+
+.row:after {
+  clear: both;
+}
+
+.container {
+  max-width: 35em;
+  padding: 1em 3em 3em 3em;
+  margin: 0em auto;
+  background-color: rgba(200,200,200, 0.5);
+  border-radius: 35px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+position: relative;
+animation: slide 1s;
+-webkit-animation: slide 1s;
+animation-fill-mode: forwards;
+}
+
+.columnOneThird {
+  float: right;
+  width: 31%;
+}
+
+.columnTwoThirds {
+  display: inline-block;
+  width: 67%;
+}
+
+.columnFull {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@keyframes slide {
+    from {top:-1000px;}
+    to {top:125px;}
+}
