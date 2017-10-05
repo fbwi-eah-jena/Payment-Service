@@ -11,20 +11,20 @@
 	{
 		"email" :
 			{
-				"host" : "smtp.strato.de",
-				"port" : 465,
+				"host" : "",
+				"port" : ,
 				"secure" : true,
 				"auth" :
 				{
-					"user": "dev@michaelmaisel.de",
-					"pass": "devaccount12345"
+					"user": "",
+					"pass": ""
 				}
 			},
 		"paypal" :
 		{
-			"user" : "kontakt-facilitator_api1.michaelmaisel.de",
-			"pass" : "9XWB5FS47MG839U8",
-			"signature" : "AFcWxV21C7fd0v3bYYYRCpSSRl31AZeTLEimHyYlgIgLS9.U0RL735Df",
+			"user" : "",
+			"pass" : "",
+			"signature" : "",
 			"returnurl" : "http://localhost:3001/success",
 			"cancelurl" : "http://localhost:3001/fail"
 		}
