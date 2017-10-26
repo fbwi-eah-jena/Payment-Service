@@ -5,45 +5,51 @@ html
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
     link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/css/style.css')
+
   body
+
+    div
+    input#btnBack(type='button', value='Design')
+
+    script(src='/javascripts/script.js')
+      
     .container
       form(method='get', action='/payment')
         .row
-          
           h1 <u> I4.0 Paymentservice Demo </u>
-          
+
           h3 Persönliche Daten
           .input-group.input-group-icon
             input(type='text', placeholder='Vorname', name='firstname', autocomplete='on', pattern="([a-zA-Z]{3,30}\s*)+", autofocus='', required='')
             .input-icon
               i.fa.fa-user
-                
+
           .input-group.input-group-icon
             input(type='text', placeholder='Nachname', name='lastname', autocomplete='on', pattern="[a-zA-Z]{3,30}", autofocus='', required='', min='5')
             .input-icon
               i.fa.fa-user
-                
+
           .input-group.input-group-icon
             input(type='number', placeholder='Order ID', name='orderid', min='1', required='')
             .input-icon
               i.fa.fa-key
-                
+
           .input-group.input-group-icon
             input(type='email', placeholder='E-Mail Adresse', name='mail', autocomplete='on', required='')
             .input-icon
               i.fa.fa-envelope
-                
+
           h3 Adresse
-          
-          .columnFull
+
+          .columnFull1
             input(type='text', placeholder='Straße', name='street', autocomplete='on', required='')
-          
+
           .columnTwoThirds.input-group
             input(type='text', placeholder='Stadt', name='city', autocomplete='on', pattern="([a-zA-Zßäöü]{3,30}\s*)+", required='')
-          
+
           .columnOneThird.input-group
             input(type='text', placeholder='Postleitzahl', name='citycode', autocomplete='on', pattern='[0-9]{5}', required='')
-          
+
           div
             .input-group.input-group-icon
               button(type='submit', name='confirm') Weiter zur Zahlung

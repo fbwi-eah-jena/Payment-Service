@@ -6,59 +6,112 @@ html
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
     link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/css/style.css')
-  body
+    script(src='/javascripts/script.js')
+
+  body(onload='show1()')
+    
+    div
+    input#btnBack(type='button', value='Design')
+      
+    script(src='/javascripts/script.js')
+      
     .container
       form(method='get', action='/paymentstart')
         .row
           h1 <u>I4.0 Paymentservice</u>
           div
-            h2 deine Bestellübersicht für Order-ID #{id}
-          div
-            table
-              tr
-                th Zutat
-                th
-                th Preis
-              tr
-                td
-                  span #{juice}
-                td
-                td
-                  span #{pricejuice}
-              tr
-                td
-                  span #{puree}
-                td
-                td
-                  span #{pricepuree}
-              tr
-                td
-                  span #{pieces}
-                td
-                td
-                  span #{pricepieces}
-            hr
-          div
-            table
-              tr
-                th Gesamt
-                th
-                th
-                  span #{pricetotal} EUR
+            h2 Deine Bestellübersicht für Order-ID #{id}
+            #bckgrnd.container
+              table
+                tr
+                  th Zutat
+                  th
+                  th Preis
+                tr
+                  td
+                    span #{juice}
+                  td
+                  td
+                    span #{pricejuice}
+                tr
+                  td
+                    span #{puree}
+                  td
+                  td
+                    span #{pricepuree}
+                tr
+                  td
+                    span #{pieces}
+                  td
+                  td
+                    span #{pricepieces}
+                            
+              hr
+              table
+                tr
+                  th Gesamt
+                  th
+                  th
+                  th
+                  th
+                  th
+                    span #{pricetotal} EUR
           div
             h2 Zahlungsart
+            label(for='payment-method-card')
+              input#payment-method-card(type='radio', name='payment-method', value='card', checked='true', onclick='show1();')
+              #icon-card
+            label(for='payment-method-paypal')
+              input#payment-method-paypal(type='radio', name='payment-method', value='paypal', onclick='show2();')
+              #icon-paypal
+          #show-me
+            h3.heading-credit Kreditkartennummer
+            .columnFull2.input-group.input-group-icon-credit
+              input(type='text', placeholder='XXXX XXXX XXXX XXXX', name='cardNo', pattern='[0-9]{16}')
+              span.input-icon.input-icon-credit
+                i.fa.fa-credit-card
+            div(style='clear: both')
+              h3.heading-expiry Ablaufdatum
+              h3.heading-cvc Sicherheitscode
+            .columnOneThird2.input-group
+                select
+                  option(value='', disabled='', selected='') Monat
+                  option(value='01') Januar
+                  option(value='02') Februar
+                  option(value='03') März
+                  option(value='04') April
+                  option(value='05') Mai
+                  option(value='06') Juni
+                  option(value='07') Juli
+                  option(value='08') August
+                  option(value='09') September
+                  option(value='10') Oktober
+                  option(value='11') November
+                  option(value='12') Dezember
+            .columnOneThird3.input-group
+                select
+                  option(value='', disabled='', selected='') Jahr
+                  option(value='2017') 2017
+                  option(value='2018') 2018
+                  option(value='2019') 2019
+                  option(value='2020') 2020
+                  option(value='2021') 2021
+                  option(value='2022') 2022
+                  option(value='2023') 2023
+                  option(value='2024') 2024
+                  option(value='2025') 2025
+                  option(value='2026') 2026
+                  option(value='2027') 2027
+                  option(value='2028') 2028
+            .columnOneThird.input-group
+              input(type='text', placeholder='XXX', name='code', pattern='[0-9]{3}')
+            div
+              .input-group
+                - var orderid = {id};
+                .button-style2
+                  button(type='hidden' id='test' name='orderid' value=orderid) Bestellung abschließen
+          #show-button
             .input-group
-              input#payment-method-paypal(type='radio', name='payment-method', value='paypal', checked='true')
-              label(for='payment-method-paypal')
-                span
-                  i.fa.fa-cc-paypal
-                  | PayPal
-              input#payment-method-card(type='radio', name='payment-method', value='card')
-              label(for='payment-method-card')
-                span
-                  i.fa.fa-cc-visa
-                  | Kreditkarte
-          div
-            .input-group.input-group-icon
-              - var orderid = {id}; 
-              button(type='hidden' id='test' name='orderid' value=orderid) Bestellung abschließen
+              - var orderid = {id};
+              .button-style2
+                button(type='hidden' id='test' name='orderid' value=orderid) Bestellung abschließen

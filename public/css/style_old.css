@@ -24,7 +24,7 @@ body {
 
 #btnback {
   position: absolute;
-  left: 80%;
+  left: 78em;
   width: 5em;
   background-color: rgba(200,200,200, 0.5);
 }
@@ -48,10 +48,11 @@ body {
   border-radius: 35px;
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: relative;
-  animation: slide 1s;          /*Slide-Animation für Container bei Laden der Seite*/
-  -webkit-animation: slide 1s;
-  animation-fill-mode: forwards;
+
+position: relative;
+animation: slide 1s;          /*Slide-Animation für Container bei Laden der Seite*/
+-webkit-animation: slide 1s;
+animation-fill-mode: forwards;
 }
 
 .containerNS {
@@ -66,7 +67,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1, h2, h3 {                      /*Formatierung Überschriften h1 (View 1) & h3 (View 2)*/
+h1, h3, h2 {                      /*Formatierung Überschriften h1 (View 1) & h3 (View 2)*/
   color: white;
   text-shadow: 0 0 15px #000000;
 }
@@ -76,7 +77,7 @@ h1, h2, h3 {                      /*Formatierung Überschriften h1 (View 1) & h3
     to {top:125px;}
 }
 
-input:focus, select:focus, button:focus {outline: none;}  /*Umgehung der Standardformatierung für Inputfelder*/
+input:focus, select:focus {outline: none;}  /*Umgehung der Standardformatierung für Inputfelder*/
 input:invalid {color: red;}
 input:valid {color: green;}
 select {color: gray; }
@@ -119,6 +120,7 @@ input:focus + .input-icon i {
 
 .input-group {
   margin-bottom: 1em;         /*Abstand zwischen Input-Feldern*/
+
 }
 
 .input-group-icon {
@@ -146,22 +148,12 @@ input:focus + .input-icon i {
   position: relative;
 }
 
+.row:after {
+  clear: both;
+}
+
 .columnOneThird {         /*Gedrittelte Eingabefelder*/
-display: inline-block;
   float: right;
-  width: 31%;
-}
-
-.columnOneThird2 {         /*Gedrittelte Eingabefelder*/
-clear: both;
-width: 31%;
-float: left;
-}
-
-.columnOneThird3 {         /*Gedrittelte Eingabefelder*/
-  display: inline-block;
-  margin-left: 1em;
-  float: left;
   width: 31%;
 }
 
@@ -170,17 +162,12 @@ float: left;
   width: 67%;
 }
 
-.columnFull1 {
+.columnFull {
   width: 100%;
   margin-bottom: 1em;
 }
 
-.columnFull2 {
-  width: 100%;
-  margin-bottom: 0em;
-}
-
-button:hover {                 /*Hover-Effekt: grüne Umrandung*/
+button:hover{                 /*Hover-Effekt: grüne Umrandung*/
   border: 4px solid #66b40a;
 }
 
@@ -199,16 +186,6 @@ button {                      /*Standardformatierung für Buttons*/
 /*CSS-Code View 2*/
 table {                          /*Tabellenformatierung View 2*/
   border-spacing: 15px;
-  font-style: normal;
-}
-
-tr {
-  text-align: left;
-}
-
-hr {
-  margin: 0px;
-  width: 62%;
 }
 
 input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)*/
@@ -222,165 +199,38 @@ input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)
   border-width:2px;
   border-radius: 35px;
   box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-#bckgrnd {                    /*Hintergrund für Tabelle*/
-  background-color: white;
-  max-width: 35em;
-  margin: -8em 0em 10em 0em;  /*Ränder Oben, Unten*/
-  border-radius: 35px;
-}
-
-#icon-paypal {
-  content:url("/images/Icons/PayPal.png");
-  float: left;
-  margin-right: 1em;
-}
-
-#icon-card {
-  content:url("/images/Icons/Visa.png");
-  float: left;
-  margin: 0em 1em 1em 0em;
-}
-
-.heading-credit {
-  clear: both;
-}
-
-.heading-expiry {
-  display: inline-block;
-  float: left;
-}
-
-.heading-cvc {
-  display: inline-block;
-  float: right;
-}
-
-.input-icon-credit { /*Formatierung Icon Kreditkarte (Position,...)*/
-  position: absolute;
-  margin-top: 1em;
-  margin-left: -27em;
-}
-
-input:focus + .input-icon-credit i {
-  color: #66b40a;             /* Farbe für Icon bei Klick */
 }
 
 input[type="radio"] {
-    display: none;
+  display: none;
+}
+input[type="radio"] + label {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  float: left;
+  border-radius: 0;
+}
+input[type="radio"] + label:first-of-type {     /*Formatierung Auswahl des "radio"-Elements*/
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+input[type="radio"] + label:last-of-type {
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+input[type="radio"] + label i {
+  padding-right: 0.4em;
 }
 
-input[type=radio]:checked + label>img {
-  border: 1px solid #fff;
-  box-shadow: 0 0 3px 3px #090;
+input[type="radio"]:checked + label {     /*changing color of checked option*/
+  background-color: #279C8E;
+  color: white;
 }
-
-.input-group-icon-credit input {
-  padding-left: 4.5em;         /*Abstand zwischen Icon & Eingabe*/
-  }
 
 .button-style2 {               /*Formatierung Button View 2*/
-  width: 29em;
+  margin-left: 30%;            /*mittige Zentrierung des Buttons*/
+  border: 4px solid #e5e5e5;
+  border-radius: 15px;
   display: inline-block;
-}
-
-.row:after {
-  clear: both;
-}
-
-/*Code View PaymentSuccess*/
-
-#icon-success {
-  content:url("/images/check.png");
-  float: left;
-  margin: 0em 2em 2em 0em;
-  width: 13%;
-  height: auto;
-}
-
-.button-style3 {
-  margin: 1em 0em 0em 5.5em;
-}
-
-
-/* animations */
-@-webkit-keyframes checkmark {
-    0% {
-        stroke-dashoffset: 50px
-    }
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@-ms-keyframes checkmark {
-    0% {
-        stroke-dashoffset: 50px
-    }
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@keyframes checkmark {
-    0% {
-        stroke-dashoffset: 50px
-    }
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@-webkit-keyframes checkmark-circle {
-    0% {
-        stroke-dashoffset: 240px
-    }
-    100% {
-        stroke-dashoffset: 480px
-    }
-}
-@-ms-keyframes checkmark-circle {
-    0% {
-        stroke-dashoffset: 240px
-    }
-    100% {
-        stroke-dashoffset: 480px
-    }
-}
-@keyframes checkmark-circle {
-    0% {
-        stroke-dashoffset: 240px
-    }
-    100% {
-        stroke-dashoffset: 480px
-    }
-}
-/* other styles */
-/* .svg svg {
-    display: none
-}
- */
-.inlinesvg .svg svg {
-    display: inline
-}
-/* .svg img {
-    display: none
-} */
-.icon--order-success svg path {
-    -webkit-animation: checkmark 0.3s ease-in-out 1.5s backwards;    /*Checkmark drawing time; "backwards"= timw until animation begins*/
-    animation: checkmark 0.3s ease-in-out 1.5s backwards
-}
-.icon--order-success svg circle {
-    -webkit-animation: checkmark-circle 1.3s ease-in-out 0.4s backwards; /*Circle drawing time; "backwards"= timw until animation begins*/
-    animation: checkmark-circle 1.3s ease-in-out 0.4s backwards
-}
-
-.icon--order-success {
-  width: 20%;
-  margin: 3em 0em 2em 0em;
-  float: right;
-  }
-
-.cont-success {
-  padding: 1em 1em 1em 3em;
 }
