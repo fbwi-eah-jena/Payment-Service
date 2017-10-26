@@ -242,7 +242,7 @@ router.get('/success' || '/paymentfail', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-  res.render('Testingpage', { title: 'Paymentservice' });
+  res.render('test', { title: 'Paymentservice' });
 });
 
 /* GET unknown URL */

@@ -198,18 +198,28 @@ button {                      /*Standardformatierung für Buttons*/
 
 /*CSS-Code View 2*/
 table {                          /*Tabellenformatierung View 2*/
+  border-radius: 35px;
   border-spacing: 15px;
   font-style: normal;
+  empty-cells: hide;
+  width: 100%;
+  border: 1px solid white;
+  text-align: center;
+}
+
+th {
+  height: 30px;
+  font-size: large;
 }
 
 tr {
   text-align: left;
 }
 
-hr {
-  margin: 0px;
-  width: 62%;
+td {
+  font-size: medium;
 }
+
 
 input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)*/
   width: 100%;
@@ -266,7 +276,8 @@ input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)
 }
 
 input:focus + .input-icon-credit i {
-  color: #66b40a;             /* Farbe für Icon bei Klick */
+  border: 1px solid #ffffff;
+  color: #66b40a; /* Farbe für Icon bei Klick */
 }
 
 input[type="radio"] {

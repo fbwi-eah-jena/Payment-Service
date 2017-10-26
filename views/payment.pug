@@ -8,62 +8,60 @@ html
     link(rel='stylesheet', href='/css/style.css')
     script(src='/javascripts/script.js')
 
-  body(onload='show1()')
+  body(onload='show2()')
     
-    div
-    input#btnBack(type='button', value='Design')
+    // Design Switch Button
+    // div
+    // input#btnBack(type='button', value='Design')
       
     script(src='/javascripts/script.js')
       
     .container
       form(method='get', action='/paymentstart')
         .row
-          h1 <u>I4.0 Paymentservice</u>
+          h1 <u>I4.0 Paymentservice Demo</u>
           div
-            h2 Deine Bestellübersicht für Order-ID #{id}
-            #bckgrnd.container
+            h2 Deine Bestellübersicht für Order-ID #{id} :
+            h3
               table
                 tr
+                  th #
                   th Zutat
-                  th
                   th Preis
                 tr
+                  td 1
                   td
                     span #{juice}
                   td
-                  td
                     span #{pricejuice}
                 tr
+                  td 2
                   td
                     span #{puree}
                   td
-                  td
                     span #{pricepuree}
                 tr
+                  td 3
                   td
                     span #{pieces}
                   td
-                  td
                     span #{pricepieces}
-                            
-              hr
-              table
                 tr
-                  th Gesamt
-                  th
-                  th
-                  th
-                  th
-                  th
-                    span #{pricetotal} EUR
+                  td 
+                  td 
+                    h3 Gesamt
+                  td 
+                    h3 <u> #{pricetotal} EUR <u>
+            h3
+
           div
             h2 Zahlungsart
-            label(for='payment-method-card')
-              input#payment-method-card(type='radio', name='payment-method', value='card', checked='true', onclick='show1();')
-              #icon-card
             label(for='payment-method-paypal')
               input#payment-method-paypal(type='radio', name='payment-method', value='paypal', onclick='show2();')
               #icon-paypal
+            label(for='payment-method-card')
+              input#payment-method-card(type='radio', name='payment-method', value='card', checked='true', onclick='show1();mark(this)')
+              #icon-card
           #show-me
             h3.heading-credit Kreditkartennummer
             .columnFull2.input-group.input-group-icon-credit
