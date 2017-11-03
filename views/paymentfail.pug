@@ -2,8 +2,19 @@ html
   head
     meta(charset='UTF-8')
     title Paymentservice
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/css/style.css')
+
+    
   body
-    .container
-      h1 <u>I4.0 Paymentservice Demo</u>
-      h3 Hups! Da ist wohl etwas schief gelaufen
+
+    .container.cont-success
+      .icon--order-fail
+        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 130.2 130.2')
+          circle.path.circle(fill='none', stroke='#F51414', stroke-width='7', stroke-miterlimit='10', cx='65.1', cy='65.1', r='62.1')
+          line.path.line(fill='white', stroke='#F51414', stroke-width='6', stroke-linecap='round', stroke-miterlimit='10', x1='34.4', y1='37.9', x2='95.8', y2='92.3')
+          line.path.line(fill='white', stroke='#F51414', stroke-width='6', stroke-linecap='round', stroke-miterlimit='10', x1='95.8', y1='38', x2='34.4', y2='92.2')
+      h1 <u>I4.0 Paymentservice</u>
+      h2 Whoops! Da ist etwas schief gelaufen.
+        

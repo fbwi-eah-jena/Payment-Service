@@ -13,12 +13,12 @@ body {
 
 
   @font-face {
-  	font-family: 'Verdana Bold Italic';
-  	src: url('fonts/verdanaz.ttf');
-  	src:
-  		local('Verdana Bold Italic'),
-  		url('/fonts/verdanaz.ttf')
-  		format('opentype');
+    font-family: 'Verdana Bold Italic';
+    src: url('fonts/verdanaz.ttf');
+    src:
+        local('Verdana Bold Italic'),
+        url('/fonts/verdanaz.ttf')
+        format('opentype');
   }
 }
 
@@ -198,41 +198,27 @@ button {                      /*Standardformatierung für Buttons*/
 
 /*CSS-Code View 2*/
 table {                          /*Tabellenformatierung View 2*/
-  border-radius: 35px;
   border-spacing: 15px;
   font-style: normal;
-  empty-cells: hide;
-  width: 100%;
-  border: 1px solid white;
-  text-align: center;
-}
-
-th {
-  height: 30px;
-  font-size: large;
 }
 
 tr {
   text-align: left;
 }
 
-td {
-  font-size: medium;
+hr {
+  margin: 0px;
+  width: 62%;
 }
 
-
 input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)*/
-  width: 100%;
   padding: 1em;
   margin-bottom: 3em;
   line-height: 1.4;
-  background-color: white;  /*Farbe für Eingabefelder*/
   border-style: solid;
   border:none;
   border-width:2px;
-  border-radius: 35px;
   box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -243,16 +229,43 @@ input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)
   border-radius: 35px;
 }
 
-#icon-paypal {
-  content:url("/images/Icons/PayPal.png");
-  float: left;
-  margin-right: 1em;
+.PayPal{background-image:url("/images/Icons/PayPal.png");}
+.visa{background-image:url("/images/Icons/Visa.png");}
+
+.cc-selector {
+ height: 6em;
 }
 
-#icon-card {
-  content:url("/images/Icons/Visa.png");
-  float: left;
-  margin: 0em 1em 1em 0em;
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+
+.cc-selector input:focus +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc {
+  border: border: 20px solid #e5e5e5;
+
+}
+
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1) grayscale(1) opacity(.5);
+       -moz-filter: brightness(1) grayscale(1) opacity(.5);
+            filter: brightness(1) grayscale(1) opacity(.5);
+}
+
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1) grayscale(.5) opacity(.75);
+       -moz-filter: brightness(1) grayscale(.5) opacity(.75);
+            filter: brightness(1) grayscale(.5) opacity(.75);
 }
 
 .heading-credit {
@@ -276,17 +289,11 @@ input[type="radio"] + label {   /*Formatierung "radio-input" Element (Bezahlart)
 }
 
 input:focus + .input-icon-credit i {
-  border: 1px solid #ffffff;
-  color: #66b40a; /* Farbe für Icon bei Klick */
+  color: #66b40a;             /* Farbe für Icon bei Klick */
 }
 
 input[type="radio"] {
     display: none;
-}
-
-input[type=radio]:checked + label>img {
-  border: 1px solid #fff;
-  box-shadow: 0 0 3px 3px #090;
 }
 
 .input-group-icon-credit input {
@@ -302,96 +309,111 @@ input[type=radio]:checked + label>img {
   clear: both;
 }
 
-/*Code View PaymentSuccess*/
+/*Code View Payment Success & Failed*/
 
-#icon-success {
-  content:url("/images/check.png");
-  float: left;
-  margin: 0em 2em 2em 0em;
-  width: 13%;
-  height: auto;
+.cont-success {
+  padding: 1em 1em 1em 3em;
 }
 
-.button-style3 {
-  margin: 1em 0em 0em 5.5em;
+svg {
+  width: 30%;
+  margin: 0em 0em 0em 2em;
 }
 
-
-/* animations */
-@-webkit-keyframes checkmark {
-    0% {
-        stroke-dashoffset: 50px
-    }
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@-ms-keyframes checkmark {
-    0% {
-        stroke-dashoffset: 50px
-    }
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@keyframes checkmark {
-    0% {
-        stroke-dashoffset: 50px
-    }
-    100% {
-        stroke-dashoffset: 0
-    }
-}
-@-webkit-keyframes checkmark-circle {
-    0% {
-        stroke-dashoffset: 240px
-    }
-    100% {
-        stroke-dashoffset: 480px
-    }
-}
-@-ms-keyframes checkmark-circle {
-    0% {
-        stroke-dashoffset: 240px
-    }
-    100% {
-        stroke-dashoffset: 480px
-    }
-}
-@keyframes checkmark-circle {
-    0% {
-        stroke-dashoffset: 240px
-    }
-    100% {
-        stroke-dashoffset: 480px
-    }
-}
-/* other styles */
-/* .svg svg {
-    display: none
-}
- */
-.inlinesvg .svg svg {
-    display: inline
-}
-/* .svg img {
-    display: none
-} */
-.icon--order-success svg path {
-    -webkit-animation: checkmark 0.3s ease-in-out 1.5s backwards;    /*Checkmark drawing time; "backwards"= timw until animation begins*/
-    animation: checkmark 0.3s ease-in-out 1.5s backwards
-}
-.icon--order-success svg circle {
-    -webkit-animation: checkmark-circle 1.3s ease-in-out 0.4s backwards; /*Circle drawing time; "backwards"= timw until animation begins*/
-    animation: checkmark-circle 1.3s ease-in-out 0.4s backwards
+.suc {
+  width: 55%;
 }
 
 .icon--order-success {
   width: 20%;
-  margin: 3em 0em 2em 0em;
+  margin: 4.5em 0em 0em 0em;
   float: right;
   }
 
-.cont-success {
-  padding: 1em 1em 1em 3em;
+.icon--order-fail {
+  width: 35%;
+  margin: 5em 0em 2em 0em;
+  float: right;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.circle {
+    -webkit-animation: dash 2.9s ease-in-out;
+    animation: dash 2.9s ease-in-out;
+  }
+
+.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 1.9s 1.35s ease-in-out forwards;
+    animation: dash 2.9s 1.35s ease-in-out forwards;
+    animation: dash 2.9s 1.35s ease-in-out forwards;
+  }
+.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check 1.9s 1.35s ease-in-out forwards;
+    animation: dash-check 1.9s 1.35s ease-in-out forwards;
+  }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+/* Formatierung Tabelle */
+table {
+  border-radius: 35px;
+  border-spacing: 15px;
+  font-style: normal;
+  empty-cells: hide;
+  width: 100%;
+  border: 1px solid white;
+  text-align: center;
+}
+
+th {
+  height: 30px;
+  font-size: large;
+}
+
+tr {
+  text-align: left;
+}
+
+td {
+  font-size: medium;
 }

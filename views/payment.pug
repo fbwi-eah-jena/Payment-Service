@@ -56,12 +56,11 @@ html
 
           div
             h2 Zahlungsart
-            label(for='payment-method-paypal')
-              input#payment-method-paypal(type='radio', name='payment-method', value='paypal', onclick='show2();')
-              #icon-paypal
-            label(for='payment-method-card')
-              input#payment-method-card(type='radio', name='payment-method', value='card', checked='true', onclick='show1();mark(this)')
-              #icon-card
+            .cc-selector
+              input#PayPal(type='radio', name='payment-method', value='card', checked='true', onclick='show2()')
+              label.drinkcard-cc.PayPal(for='PayPal')
+              input#visa(type='radio', name='payment-method', value='card', onclick='show1();mark(this)')
+              label.drinkcard-cc.visa(for='visa')
           #show-me
             h3.heading-credit Kreditkartennummer
             .columnFull2.input-group.input-group-icon-credit
@@ -107,9 +106,9 @@ html
               .input-group
                 - var orderid = {id};
                 .button-style2
-                  button(type='hidden' id='test' name='orderid' value=orderid) Bestellung abschließen
+                  button(type='hidden' id='' name='orderid' value=orderid) Bestellung abschließen
           #show-button
             .input-group
               - var orderid = {id};
               .button-style2
-                button(type='hidden' id='test' name='orderid' value=orderid) Bestellung abschließen
+                button(type='hidden' id='' name='orderid' value=orderid) Bestellung abschließen
