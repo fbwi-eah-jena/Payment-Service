@@ -241,10 +241,6 @@ router.get('/success' || '/paymentfail', function(req, res, next) {
   })
 });
 
-router.get('/test', function(req, res, next) {
-  res.render('test', { title: 'Paymentservice' });
-});
-
 /* GET unknown URL */
 router.get('*', function(req, res, next) {
   res.render('start', { title: 'Paymentservice' });

@@ -17,7 +17,7 @@ html
     script(src='/javascripts/script.js')
       
     .container
-      form(method='get', action='/paymentstart')
+      form(method='get', action='')
         .row
           h1 <u>I4.0 Paymentservice Demo</u>
           div
@@ -106,9 +106,9 @@ html
               .input-group
                 - var orderid = {id};
                 .button-style2
-                  button(type='hidden' id='' name='orderid' value=orderid) Bestellung abschließen
+                  button(type='hidden' name='orderid' formaction='notdefined' value=orderid) Bestellung abschließen
           #show-button
             .input-group
               - var orderid = {id};
               .button-style2
-                button(type='hidden' id='' name='orderid' value=orderid) Bestellung abschließen
+                button(type='hidden' name='orderid' formaction='paymentstart' value=orderid) Bestellung abschließen
