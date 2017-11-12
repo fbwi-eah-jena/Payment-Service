@@ -4,6 +4,23 @@ const nodemailer = require('nodemailer');
 
 function start(){
 
+  var db = mysql.createConnection({
+      host: conf.paymentdb.host,
+      user: conf.paymentdb.user,
+      password: conf.paymentdb.password,
+      database: conf.paymentdb.db
+  });
+
+  // CHECK IF DATABASE CONNECTION CAN BE ESTABLISHED
+  db.connect(function(err){
+    if(err){
+      console.log("--- DATABASE CONNECTION COULD NOT BE ESTABLISHED");
+    }
+    else{
+      console.log("--- DATABASE CONNECTION ESTABLISHED");
+    }
+  });
+
   // CONNECT TO MQTT BROKER
   const mqtt = require('mqtt');
   console.log('');
@@ -25,15 +42,7 @@ function start(){
     console.log("--- MQTT MESSAGE : " + message.toString());
     if(topic == "order/accept"){
 
-      var db = mysql.createConnection({
-          host: conf.paymentdb.host,
-          user: conf.paymentdb.user,
-          password: conf.paymentdb.password,
-          database: conf.paymentdb.db
-      });
-
       var jsondata = JSON.parse(message.toString());
-      console.log(jsondata);
       // PARSE EMAIL HERE WHEN IMPLEMENTED IN ORDERSERVICE
       /*
       var email = jsondata.email;
